@@ -31,7 +31,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBacon(Filler type, Format format)
+        public static string GetBacon(Format format, Filler type)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(type);
@@ -53,7 +53,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBacon(int paragraphs, Format format)
+        public static string GetBacon(Format format, int paragraphs)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(Filler.FillerAndMeat);
@@ -76,7 +76,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBacon(Filler type, int paragraphs, Format format)
+        public static string GetBacon(Format format, Filler type, int paragraphs)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(type);
@@ -122,7 +122,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBacon(Filler type, bool startwithbacon, Format format)
+        public static string GetBacon(Format format, Filler type, bool startwithbacon)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(type);
@@ -134,7 +134,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBacon(int paragraphs, bool startwithbacon, Format format)
+        public static string GetBacon(Format format, int paragraphs, bool startwithbacon)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(Filler.FillerAndMeat);
@@ -159,7 +159,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBacon(Filler type, int paragraphs, bool startwithbacon, Format format)
+        public static string GetBacon(Format format, Filler type, int paragraphs, bool startwithbacon)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(type);
@@ -168,6 +168,17 @@ namespace BaconIpsum
             string stringformat = GetFormatString(format);
 
             url += $"?{filler}&{paras}&{begin}&{stringformat}";
+
+            return GetBaconFromURL(url);
+        }
+
+        public static string GetBacon(Format format)
+        {
+            string url = BaseURL;
+            string filler = GetFillerTypeString(Filler.FillerAndMeat);
+            string stringformat = GetFormatString(format);
+
+            url += $"?{filler}&{stringformat}";
 
             return GetBaconFromURL(url);
         }
@@ -194,7 +205,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBaconParagraph(Filler type, Format format)
+        public static string GetBaconParagraph(Format format, Filler type)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(type);
@@ -217,7 +228,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBaconParagraph(int sentences, Format format)
+        public static string GetBaconParagraph(Format format, int sentences)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(Filler.FillerAndMeat);
@@ -240,7 +251,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBaconParagraph(Filler type, int sentences, Format format)
+        public static string GetBaconParagraph(Format format, Filler type, int sentences)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(type);
@@ -288,7 +299,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBaconParagraph(Filler type, bool startwithbacon, Format format)
+        public static string GetBaconParagraph(Format format, Filler type, bool startwithbacon)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(type);
@@ -301,7 +312,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBaconParagraph(int sentences, bool startwithbacon, Format format)
+        public static string GetBaconParagraph(Format format, int sentences, bool startwithbacon)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(Filler.FillerAndMeat);
@@ -326,7 +337,7 @@ namespace BaconIpsum
             return GetBaconFromURL(url);
         }
 
-        public static string GetBaconParagraph(Filler type, int sentences, bool startwithbacon, Format format)
+        public static string GetBaconParagraph(Format format, Filler type, int sentences, bool startwithbacon)
         {
             string url = BaseURL;
             string filler = GetFillerTypeString(type);
@@ -335,6 +346,18 @@ namespace BaconIpsum
             string stringformat = GetFormatString(format);
 
             url += $"?{filler}&{sentencecount}&{begin}&{stringformat}";
+
+            return GetBaconFromURL(url);
+        }
+
+        public static string GetBaconParagraph(Format format)
+        {
+            string url = BaseURL;
+            string filler = GetFillerTypeString(Filler.FillerAndMeat);
+            string paras = GetParaString(1);
+            string stringformat = GetFormatString(format);
+
+            url += $"?{filler}&{paras}&{stringformat}";
 
             return GetBaconFromURL(url);
         }
